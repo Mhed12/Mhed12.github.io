@@ -19,7 +19,7 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
     return (
         <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 pb-10">
             {/* Background Glow Aura */}
-            <div 
+            <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none transition-colors duration-1000"
                 style={{ backgroundColor: activeRole.glowColor }}
             />
@@ -30,17 +30,17 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                     <motion.div variants={itemVariants} className="inline-block mb-4 px-3 py-1 rounded-full border border-white/10 bg-white/5 font-mono text-xs uppercase tracking-widest text-slate-400">
                         Status: <span className="text-emerald-400">Operational</span>
                     </motion.div>
-                    
-                    <motion.h1 
-                        variants={itemVariants} 
+
+                    <motion.h1
+                        variants={itemVariants}
                         className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-white"
                         style={{ lineHeight: 1.1 }}
                     >
                         Mohammed B.<br />Dela Cruz
                     </motion.h1>
 
-                    <motion.h2 
-                        variants={itemVariants} 
+                    <motion.h2
+                        variants={itemVariants}
                         className="text-xl md:text-2xl text-slate-400 mb-8 font-mono"
                     >
                         Executing sequence as <span className={`font-bold ${activeRole.accentClass}`}>{activeRole.label}</span>...
@@ -52,10 +52,6 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                             <Mail size={18} className={activeRole.accentClass} />
                             <span>mohammeddelacruz712@gmail.com</span>
                         </a>
-                        <div className="flex items-center gap-3">
-                            <Phone size={18} className={activeRole.accentClass} />
-                            <span>0966-223-8926</span>
-                        </div>
                         <div className="flex items-center gap-3">
                             <MapPin size={18} className={activeRole.accentClass} />
                             <span>General Trias City, Cavite</span>
@@ -85,7 +81,7 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                 </motion.div>
 
                 {/* Right Side: Identity Switcher & Interactive Role Card */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -94,7 +90,7 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                     <div className="glass-panel p-8 w-full max-w-md mx-auto aspect-square flex flex-col relative overflow-hidden group">
                         {/* Background subtle grid pattern */}
                         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50" />
-                        
+
                         <div className="relative z-10 flex-1 flex flex-col">
                             <div className="flex justify-between items-center mb-6">
                                 <h3 className="font-mono text-sm uppercase text-slate-400 tracking-widest">Select Identity</h3>
@@ -104,25 +100,25 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                                     <div className="w-2 h-2 rounded-full bg-emerald-500" />
                                 </div>
                             </div>
-                            
+
                             <div className="flex flex-col gap-4 mb-auto">
-                                <RoleOption 
-                                    role={ROLES.AI_DEV} 
-                                    activeRole={activeRole} 
+                                <RoleOption
+                                    role={ROLES.AI_DEV}
+                                    activeRole={activeRole}
                                     onClick={() => setActiveRole(ROLES.AI_DEV)}
-                                    icon={<Terminal size={20} />} 
+                                    icon={<Terminal size={20} />}
                                 />
-                                <RoleOption 
-                                    role={ROLES.DATA_ENG} 
-                                    activeRole={activeRole} 
+                                <RoleOption
+                                    role={ROLES.DATA_ENG}
+                                    activeRole={activeRole}
                                     onClick={() => setActiveRole(ROLES.DATA_ENG)}
-                                    icon={<Database size={20} />} 
+                                    icon={<Database size={20} />}
                                 />
-                                <RoleOption 
-                                    role={ROLES.BI_DEV} 
-                                    activeRole={activeRole} 
+                                <RoleOption
+                                    role={ROLES.BI_DEV}
+                                    activeRole={activeRole}
                                     onClick={() => setActiveRole(ROLES.BI_DEV)}
-                                    icon={<LineChart size={20} />} 
+                                    icon={<LineChart size={20} />}
                                 />
                             </div>
 
@@ -143,11 +139,10 @@ const RoleOption = ({ role, activeRole, onClick, icon }) => {
     return (
         <button
             onClick={onClick}
-            className={`w-full flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 font-mono text-sm cursor-pointer ${
-                isActive 
-                    ? `bg-white/10 text-white shadow-lg` 
+            className={`w-full flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 font-mono text-sm cursor-pointer ${isActive
+                    ? `bg-white/10 text-white shadow-lg`
                     : 'bg-transparent text-slate-400 hover:bg-white/5 border-white/5'
-            }`}
+                }`}
             style={isActive ? { borderColor: activeRole.glowColor.replace('0.15', '0.5'), boxShadow: `0 0 15px ${activeRole.glowColor}` } : {}}
         >
             <div className={`p-2 rounded-lg ${isActive ? `bg-white/10 ${role.accentClass}` : 'bg-white/5'}`}>
