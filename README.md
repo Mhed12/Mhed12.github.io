@@ -17,11 +17,15 @@ A modern, interactive online resume built using React and styled with Tailwind C
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Testing:** Vitest & React Testing Library
+- **CI/CD Deployment:** GitHub Actions
 
 ## 📂 Project Structure
 
 ```text
 interactive-resume/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # CI/CD Pipeline for auto-deploying to GitHub Pages
 ├── src/
 │   ├── components/
 │   │   ├── AgentCore.jsx   # Floating chat interface component
@@ -41,16 +45,19 @@ interactive-resume/
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+Make sure you have [Node.js](https://nodejs.org/) (version 18, 20, or newer is recommended) installed on your machine.
 
 ### Installation
 
 1. Clone the repository (or download the source).
 2. Navigate to the project directory:
+
    ```bash
    cd interactive-resume
    ```
+
 3. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -73,12 +80,26 @@ To create an optimized production build:
 npm run build
 ```
 
-This will generate a `dist` folder containing the minified and bundled application ready to be deployed.
+This will generate a `dist` folder containing the minified and bundled application.
 
-## 🧪 Running Tests
+## 🚀 Deployment (GitHub Pages)
 
-To run the Vitest test suite:
+This project contains a **GitHub Actions CI/CD pipeline** to automatically deploy the resume to **GitHub Pages**.
+
+- Every time you push code to the `main` or `master` branch, `.github/workflows/deploy.yml` takes over.
+- It safely installs dependencies, builds the production-ready Vite app, and publishes the output directly to your GitHub Pages URL safely and automatically without needing a separate `gh-pages` branch.
+
+**To enable this on your own fork/repository:**
+
+1. Navigate to your repository settings on GitHub.
+2. Go to **Pages** (under Code and automation) on the left sidebar.
+3. Under **Build and deployment**, set the **Source** dropdown to **GitHub Actions**.
+4. The workflow will now automatically run and publish your page whenever you push changes!
+
+## 🧪 Testing
+
+The project is configured for Vitest. You can run the test suite using:
 
 ```bash
-npm run test
+npx vitest
 ```
