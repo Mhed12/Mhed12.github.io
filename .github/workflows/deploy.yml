@@ -21,11 +21,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just building and deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Build job — runs outside the github-pages environment so repo secrets are accessible
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -48,6 +45,15 @@ jobs:
         with:
           # Upload dist directory
           path: './dist'
+
+  # Deploy job — runs in the github-pages environment (required for Pages deployment)
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
