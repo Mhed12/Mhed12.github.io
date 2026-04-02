@@ -9,6 +9,7 @@ A modern, interactive online resume built using React and styled with Tailwind C
 - **Neural Pipeline (Experience Section):** A vertical timeline that fluidly maps career progression and experiences.
 - **Agent Core Interface:** A floating, interactive chat-like interface that provides an engaging way to explore the resume.
 - **Micro-Animations:** Powered by Framer Motion, ensuring smooth transitions, hover effects, and a highly responsive feel.
+- **Performance Optimized:** Implements advanced React rendering optimizations (`React.memo`, `useCallback`, `useMemo`), isolating expensive API functions and preventing unnecessary re-renders in the `AgentCore` and `Education` components for a smooth user experience.
 
 ## 🛠️ Technology Stack
 

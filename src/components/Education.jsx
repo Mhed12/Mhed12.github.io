@@ -58,4 +58,4 @@ const Education = ({ activeRole }) => {
     );
 };
 
-export default Education;
+export default React.memo(Education);

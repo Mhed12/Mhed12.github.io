@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Terminal, Send, Cpu, Loader, ChevronDown } from 'lucide-react';
 
@@ -71,6 +71,36 @@ const QUICK_PROMPTS = [
   "What AI skills does he have?",
 ];
 
+const callGemini = async (contents, apiKey, attempt = 0) => {
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`, {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: RESUME_SYSTEM_PROMPT }] },
+      contents,
+      generationConfig: { maxOutputTokens: 1000, temperature: 0.7 },
+    }),
+  });
+
+  // Retry on 429 (rate limit) with exponential backoff — max 3 attempts
+  if (response.status === 429 && attempt < 3) {
+    const waitMs = 2000 * Math.pow(2, attempt); // 2s, 4s, 8s
+    await new Promise((res) => setTimeout(res, waitMs));
+    return callGemini(contents, apiKey, attempt + 1);
+  }
+
+  if (!response.ok) {
+    if (response.status === 429) {
+      throw new Error("Rate limit reached. Please wait a moment and try again.");
+    }
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return response.json();
+};
+
 const AgentCore = ({ activeRole }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -95,37 +125,7 @@ const AgentCore = ({ activeRole }) => {
     if (isOpen) setTimeout(() => inputRef.current?.focus(), 300);
   }, [isOpen]);
 
-  const callGemini = async (contents, apiKey, attempt = 0) => {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: RESUME_SYSTEM_PROMPT }] },
-        contents,
-        generationConfig: { maxOutputTokens: 1000, temperature: 0.7 },
-      }),
-    });
-
-    // Retry on 429 (rate limit) with exponential backoff — max 3 attempts
-    if (response.status === 429 && attempt < 3) {
-      const waitMs = 2000 * Math.pow(2, attempt); // 2s, 4s, 8s
-      await new Promise((res) => setTimeout(res, waitMs));
-      return callGemini(contents, apiKey, attempt + 1);
-    }
-
-    if (!response.ok) {
-      if (response.status === 429) {
-        throw new Error("Rate limit reached. Please wait a moment and try again.");
-      }
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    return response.json();
-  };
-
-  const sendMessage = async (text) => {
+  const sendMessage = useCallback(async (text) => {
     const userText = text || input.trim();
     if (!userText || isLoading) return;
 
@@ -163,17 +163,19 @@ const AgentCore = ({ activeRole }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [input, isLoading, messages]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     sendMessage();
-  };
+  }, [sendMessage]);
 
   // Accent colors derived from activeRole
-  const accent = activeRole?.accentClass || 'text-purple-400';
-  const gradient = activeRole?.gradient || 'from-purple-500 to-indigo-600';
-  const glow = activeRole?.glowColor || 'rgba(139, 92, 246, 0.15)';
+  const { accent, gradient, glow } = useMemo(() => ({
+    accent: activeRole?.accentClass || 'text-purple-400',
+    gradient: activeRole?.gradient || 'from-purple-500 to-indigo-600',
+    glow: activeRole?.glowColor || 'rgba(139, 92, 246, 0.15)'
+  }), [activeRole]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 font-mono">
@@ -374,4 +376,4 @@ const AgentCore = ({ activeRole }) => {
   );
 };
 
-export default AgentCore;
+export default React.memo(AgentCore);
