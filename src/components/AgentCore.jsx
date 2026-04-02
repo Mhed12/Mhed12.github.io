@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Terminal, Send, Cpu, Loader, ChevronDown } from 'lucide-react';
 
-// Hardcoded fallback for GitHub Pages (reads from .env when running locally)
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyCJRX7z8YjkkYoNTbGTNq5rPiyOHVBJ9kY';
+// API key is strictly loaded from the environment
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 // ─────────────────────────────────────────────
 // Resume knowledge base injected as system prompt
@@ -96,9 +96,11 @@ const AgentCore = ({ activeRole }) => {
   }, [isOpen]);
 
   const callGemini = async (contents, apiKey, attempt = 0) => {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         systemInstruction: { parts: [{ text: RESUME_SYSTEM_PROMPT }] },
         contents,
