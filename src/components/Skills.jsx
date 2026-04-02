@@ -81,4 +81,4 @@ const Skills = ({ activeRole }) => {
     );
 };
 
-export default Skills;
+export default React.memo(Skills);

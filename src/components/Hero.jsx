@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Linkedin, Download, Terminal, Database, LineChart } from 'lucide-react';
 
-const Hero = ({ activeRole, setActiveRole, ROLES }) => {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.1 }
-        }
-    };
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1 }
+    }
+};
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-    };
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const Hero = ({ activeRole, setActiveRole, ROLES }) => {
 
     return (
         <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 pb-10">
@@ -105,19 +106,19 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                                 <RoleOption
                                     role={ROLES.AI_DEV}
                                     activeRole={activeRole}
-                                    onClick={() => setActiveRole(ROLES.AI_DEV)}
+                                    onSelect={setActiveRole}
                                     icon={<Terminal size={20} />}
                                 />
                                 <RoleOption
                                     role={ROLES.DATA_ENG}
                                     activeRole={activeRole}
-                                    onClick={() => setActiveRole(ROLES.DATA_ENG)}
+                                    onSelect={setActiveRole}
                                     icon={<Database size={20} />}
                                 />
                                 <RoleOption
                                     role={ROLES.BI_DEV}
                                     activeRole={activeRole}
-                                    onClick={() => setActiveRole(ROLES.BI_DEV)}
+                                    onSelect={setActiveRole}
                                     icon={<LineChart size={20} />}
                                 />
                             </div>
@@ -134,11 +135,11 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
 };
 
 // Subcomponent for the toggle buttons
-const RoleOption = ({ role, activeRole, onClick, icon }) => {
+const RoleOption = React.memo(({ role, activeRole, onSelect, icon }) => {
     const isActive = activeRole.id === role.id;
     return (
         <button
-            onClick={onClick}
+            onClick={() => onSelect(role)}
             className={`w-full flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 font-mono text-sm cursor-pointer ${isActive
                     ? `bg-white/10 text-white shadow-lg`
                     : 'bg-transparent text-slate-400 hover:bg-white/5 border-white/5'
@@ -152,7 +153,7 @@ const RoleOption = ({ role, activeRole, onClick, icon }) => {
             {isActive && <div className="ml-auto w-2 h-2 rounded-full bg-current animate-pulse opacity-100" />}
         </button>
     );
-};
+});
 
-export default Hero;
+export default React.memo(Hero);
 

@@ -125,6 +125,9 @@ const AgentCore = ({ activeRole }) => {
     if (isOpen) setTimeout(() => inputRef.current?.focus(), 300);
   }, [isOpen]);
 
+  const handleClose = useCallback(() => setIsOpen(false), []);
+  const toggleOpen = useCallback(() => setIsOpen(prev => !prev), []);
+
   const sendMessage = useCallback(async (text) => {
     const userText = text || input.trim();
     if (!userText || isLoading) return;
@@ -164,6 +167,8 @@ const AgentCore = ({ activeRole }) => {
       setIsLoading(false);
     }
   }, [input, isLoading, messages]);
+
+  const handleQuickCommand = useCallback((prompt) => sendMessage(prompt), [sendMessage]);
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
@@ -216,7 +221,7 @@ const AgentCore = ({ activeRole }) => {
                 </div>
               </div>
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={handleClose}
                 className="text-slate-500 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
               >
                 <X size={16} />
@@ -305,7 +310,7 @@ const AgentCore = ({ activeRole }) => {
                     {QUICK_PROMPTS.map((prompt) => (
                       <button
                         key={prompt}
-                        onClick={() => sendMessage(prompt)}
+                        onClick={() => handleQuickCommand(prompt)}
                         className={`text-[11px] px-2.5 py-1 rounded-full border border-white/10 text-slate-400 hover:text-white hover:border-white/30 transition-all cursor-pointer ${accent} hover:bg-white/5`}
                       >
                         {prompt}
@@ -351,7 +356,7 @@ const AgentCore = ({ activeRole }) => {
       <motion.button
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.94 }}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleOpen}
         className={`flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r ${gradient} text-white shadow-xl cursor-pointer ml-auto relative`}
         style={{ boxShadow: `0 0 24px ${glow}, 0 4px 20px rgba(0,0,0,0.4)` }}
       >

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, Calendar, ChevronRight, Database } from 'lucide-react';
 
@@ -61,6 +61,10 @@ const experiences = [
 const Experience = ({ activeRole }) => {
     const [selectedId, setSelectedId] = useState(null);
 
+    const handleSelect = useCallback((id) => {
+        setSelectedId((prevId) => (prevId === id ? null : id));
+    }, []);
+
     return (
         <section id="experience" className="py-20">
             <motion.div
@@ -111,7 +115,7 @@ const Experience = ({ activeRole }) => {
                             {/* Content Card */}
                             <motion.div 
                                 layout
-                                onClick={() => setSelectedId(isExpanded ? null : job.id)}
+                                onClick={() => handleSelect(job.id)}
                                 className={`w-full md:w-[45%] ml-10 md:ml-0 glass-panel p-6 cursor-pointer border hover:bg-white/10 transition-all duration-300 ${
                                     isExpanded ? 'border-white/30' : 'border-white/5'
                                 }`}
@@ -175,4 +179,4 @@ const Experience = ({ activeRole }) => {
     );
 };
 
-export default Experience;
+export default React.memo(Experience);
