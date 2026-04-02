@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Terminal, Send, Cpu, Loader, ChevronDown } from 'lucide-react';
 
+// Hardcoded fallback for GitHub Pages (reads from .env when running locally)
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyCJRX7z8YjkkYoNTbGTNq5rPiyOHVBJ9kY';
+
 // ─────────────────────────────────────────────
 // Resume knowledge base injected as system prompt
 // ─────────────────────────────────────────────
@@ -130,8 +133,7 @@ const AgentCore = ({ activeRole }) => {
     setIsLoading(true);
 
     try {
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      if (!apiKey) throw new Error("Missing VITE_GEMINI_API_KEY in .env");
+      const apiKey = GEMINI_API_KEY;
 
       // Build message history for the Gemini API
       const contents = messages
