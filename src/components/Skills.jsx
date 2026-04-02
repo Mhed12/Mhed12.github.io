@@ -11,7 +11,7 @@ const skillCategories = [
     {
         title: "AI & Engineering",
         icon: <Cpu size={24} />,
-        skills: ["Python", "Google ADK", "AI Agents", "Machine Learning", "Computational Science"]
+        skills: ["Python", "Google ADK", "AI Agents", "API Integration"]
     },
     {
         title: "Tools & Platforms",
