@@ -8,11 +8,11 @@ const experiences = [
         role: "AI/ML Computational Science Sr Analyst",
         company: "Accenture Inc.",
         period: "Oct 2025 - Present",
-        description: "Developing AI Agent applications using Google ADK & Python. Leveraging advanced computational science techniques to drive innovation.",
+        description: "Developing Agentic AI Solutions using Google ADK & Python. Leveraging advanced computational science techniques to drive innovation.",
         details: [
             "Design and implement AI agents using Google Agent Development Kit (ADK).",
-            "Develop robust Python-based solutions for machine learning pipelines.",
-            "Collaborate with cross-functional teams to integrate AI models into business processes.",
+            "Develop robust Python-based solutions for Agentic AI Solutions.",
+            "Collaborate with cross-functional teams to integrate APIs and AI models into business processes.",
             "Optimize algorithms for performance and scalability."
         ]
     },
@@ -27,7 +27,7 @@ const experiences = [
             "Proficiently developing and consistently maintaining reports using Tableau, SSIS, Databricks, and Microsoft SQL Server.",
             "Demonstrating strong teamwork by collaborating with cross-functional teams to gather requirements.",
             "Prioritizing data accuracy and report aesthetics to empower well-informed decision-making processes.",
-            "Designed and developed the Tableau Dashboard for Schneider Electric, supporting their sustainability initiatives."
+            "Designed and Data Engineered the Tableau Dashboard for Schneider Electric, supporting their sustainability initiatives."
         ]
     },
     {

@@ -23,7 +23,7 @@ CONTACT:
 CURRENT ROLE:
 - AI/ML Computational Science Sr Analyst at Accenture Inc. (Oct 2025 – Present)
   • Developing AI Agent applications using Google ADK & Python
-  • Building machine learning pipelines and integrating AI models into business processes
+  • Building Agentic AI Solutions and integrating APIs and AI models into business processes
   • Optimizing algorithms for performance and scalability
 
 WORK EXPERIENCE:
@@ -31,7 +31,7 @@ WORK EXPERIENCE:
    • Developed Tableau Dashboard Templates used by global teams
    • Built and maintained reports using Tableau, SSIS, Databricks, Microsoft SQL Server
    • Collaborated with cross-functional teams for data requirements
-   • Designed sustainability dashboards for Schneider Electric
+   • Designed and Data Engineered the sustainability dashboards for Schneider Electric
 
 2. Technical Staff (Job Order) — TESDA | Jan 2020 – Dec 2022
    • Upgraded monitoring systems from spreadsheets to automated reporting with data viz
@@ -48,15 +48,15 @@ EDUCATION:
 - Ateneo de Naga University, Naga City, Camarines Sur | Graduated 2019
 
 TECHNICAL SKILLS:
-- AI/ML: Python, Google ADK, AI Agents, Machine Learning, Computational Science
+- AI/ML: Python, Google ADK, AI Agents, API Integration
 - Data & BI: Tableau, Databricks, SSIS, Google Data Studio, Excel, Tableau Prep
 - Data Analysis: ETL Processes, Reporting, Business Intelligence, Data Visualization
 - Databases: SQL, T-SQL, Microsoft SQL Server, MySQL
 - Web: PHP, HTML/CSS, Bootstrap
-- Currently active in: AI Agent Development, ML Pipelines
+- Currently active in: AI Agent Development
 
 PROFESSIONAL IDENTITIES (roles he can present):
-1. AI Agent Developer — focused on Google ADK, Python, AI pipelines
+1. AI Agent Developer — focused on Google ADK, Python, AI pipelines, API Integration
 2. Data Engineer — focused on Databricks, SSIS, SQL, ETL
 3. BI Developer — focused on Tableau, reporting, data visualization
 ===`;
