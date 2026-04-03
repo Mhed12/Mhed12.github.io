@@ -63,6 +63,24 @@ Make sure you have [Node.js](https://nodejs.org/) (version 18, 20, or newer is r
    npm install
    ```
 
+### Environment Setup
+
+The interactive resume features a floating AI Assistant (Agent Core) powered by the Google Gemini API. To enable it locally:
+
+1. Duplicate `.env.example` to create a new `.env` file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Open the `.env` file and set your Gemini API Key:
+
+   ```env
+   VITE_GEMINI_API_KEY=your_google_ai_studio_api_key_here
+   ```
+
+*(Note: You can get a free API key from [Google AI Studio](https://aistudio.google.com/). When deploying to production such as GitHub Pages, make sure to apply website restrictions to your API key via Google Cloud Console to secure it from unauthorized use.)*
+
 ### Running Locally
 
 To start the development server:
