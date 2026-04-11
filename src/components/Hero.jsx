@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Download, Terminal, Database, LineChart } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Download, Terminal, Database, LineChart } from 'lucide-react';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -69,6 +69,16 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                         >
                             <Linkedin size={18} className="text-slate-400 group-hover:text-blue-400" />
                             <span>LinkedIn_Profile</span>
+                        </a>
+
+                        <a
+                            href="https://github.com/Mhed12"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="glass-panel py-3 px-6 flex items-center gap-2 hover:-translate-y-1 transition-transform font-mono text-sm group"
+                        >
+                            <Github size={18} className="text-slate-400 group-hover:text-white" />
+                            <span>GitHub_Profile</span>
                         </a>
 
                         <button
