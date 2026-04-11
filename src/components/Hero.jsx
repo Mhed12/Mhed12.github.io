@@ -65,7 +65,7 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                             href="https://www.linkedin.com/in/mohammeddelacruz/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="glass-panel py-3 px-6 flex items-center gap-2 hover:-translate-y-1 transition-transform font-mono text-sm group"
+                            className="glass-panel flex-1 py-3 px-6 flex justify-center items-center gap-2 hover:-translate-y-1 transition-transform font-mono text-sm group whitespace-nowrap"
                         >
                             <Linkedin size={18} className="text-slate-400 group-hover:text-blue-400" />
                             <span>LinkedIn_Profile</span>
@@ -75,19 +75,22 @@ const Hero = ({ activeRole, setActiveRole, ROLES }) => {
                             href="https://github.com/Mhed12"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="glass-panel py-3 px-6 flex items-center gap-2 hover:-translate-y-1 transition-transform font-mono text-sm group"
+                            className="glass-panel flex-1 py-3 px-6 flex justify-center items-center gap-2 hover:-translate-y-1 transition-transform font-mono text-sm group whitespace-nowrap"
                         >
                             <Github size={18} className="text-slate-400 group-hover:text-white" />
                             <span>GitHub_Profile</span>
                         </a>
 
-                        <button
-                            className={`py-3 px-6 rounded-2xl flex items-center gap-2 text-white font-mono text-sm font-bold bg-gradient-to-r ${activeRole.gradient} hover:-translate-y-1 transition-transform shadow-lg border-none cursor-pointer`}
+                        <a
+                            href="https://drive.google.com/file/d/1hzgUTFm9XU14X84VfFFr6F_bP80BLPug/view"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`flex-1 py-3 px-6 rounded-2xl flex justify-center items-center gap-2 text-white font-mono text-sm font-bold bg-gradient-to-r ${activeRole.gradient} hover:-translate-y-1 transition-transform shadow-lg border-none cursor-pointer whitespace-nowrap`}
                             style={{ boxShadow: `0 4px 20px ${activeRole.glowColor}` }}
                         >
                             <Download size={18} />
                             <span>Initialize_Download</span>
-                        </button>
+                        </a>
                     </motion.div>
                 </motion.div>
 
