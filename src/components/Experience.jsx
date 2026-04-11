@@ -8,14 +8,14 @@ const experiences = [
         role: "AI/ML Computational Science Sr Analyst",
         company: "Accenture Inc.",
         period: "Oct 2025 - Present",
-        description: "Architecting and developing autonomous AI agent systems to optimize complex enterprise workflows and drive operational efficiency.",
+        description: "Architected and developed autonomous AI agent systems to optimize complex enterprise workflows and drive operational efficiency.",
         details: [
-            "Design and implement scalable, autonomous AI agents using Google Agent Development Kit (ADK) and Python.",
-            "Integrate Large Language Models (LLMs) utilizing Function Calling (Tool Use) to enable agents to interact with external systems and automate complex business processes.",
-            "Architect and deploy Retrieval-Augmented Generation (RAG) pipelines to empower AI agents with dynamic, domain-specific knowledge.",
-            "Develop robust backend systems, microservices, and orchestration layers for end-to-end Agentic AI Solutions.",
-            "Implement agent memory, reasoning mechanisms, and safety guardrails to ensure reliable automated operations.",
-            "Collaborate with cross-functional teams to identify automation opportunities and deploy AI-driven workflow optimizations."
+            "Designed and implemented scalable, autonomous AI agents using Google Agent Development Kit (ADK) and Python.",
+            "Integrated Large Language Models (LLMs) utilizing Function Calling (Tool Use) to enable agents to interact with external systems and automate complex business processes.",
+            "Architected and deployed Retrieval-Augmented Generation (RAG) pipelines to empower AI agents with dynamic, domain-specific knowledge.",
+            "Developed robust backend systems, microservices, and orchestration layers for end-to-end Agentic AI Solutions.",
+            "Implemented agent memory, reasoning mechanisms, and safety guardrails to ensure reliable automated operations.",
+            "Collaborated with cross-functional teams to identify automation opportunities and deploy AI-driven workflow optimizations."
         ]
     },
     {
@@ -23,12 +23,12 @@ const experiences = [
         role: "Junior Reports Developer",
         company: "Viventis Interim Inc. (Deployed at Schneider Electric)",
         period: "Jan 2023 – Oct 2025",
-        description: "Crucial tool development for Global teams using Tableau, SSIS, Databricks, and SQL Server.",
+        description: "Developed crucial tools for Global teams using Tableau, SSIS, Databricks, and SQL Server.",
         details: [
             "Developed a Tableau Dashboard Template, serving as a crucial tool for both the Global team and other departments.",
-            "Proficiently developing and consistently maintaining reports using Tableau, SSIS, Databricks, and Microsoft SQL Server.",
-            "Demonstrating strong teamwork by collaborating with cross-functional teams to gather requirements.",
-            "Prioritizing data accuracy and report aesthetics to empower well-informed decision-making processes.",
+            "Proficiently developed and consistently maintained reports using Tableau, SSIS, Databricks, and Microsoft SQL Server.",
+            "Demonstrated strong teamwork by collaborating with cross-functional teams to gather requirements.",
+            "Prioritized data accuracy and report aesthetics to empower well-informed decision-making processes.",
             "Designed and Data Engineered the Tableau Dashboard for Schneider Electric, supporting their sustainability initiatives."
         ]
     },
@@ -41,9 +41,9 @@ const experiences = [
         details: [
             "Improved the Monitoring Systems of TESDA Partnership from Spreadsheet tables to Automized reporting with data visualization.",
             "Deployed the Harmonized TESDA TVET Partnership Monitoring System (TTPMS) Version 3.",
-            "Maintains the database of the Partnerships and Linkages Office (PLO).",
+            "Maintained the database of the Partnerships and Linkages Office (PLO).",
             "Created a Google Data Studio Report for TESDA Partnership.",
-            "Monitors the 7 Delivery Modes under Enterprise Based Training Program (EBT)."
+            "Monitored the 7 Delivery Modes under Enterprise Based Training Program (EBT)."
         ]
     },
     {
@@ -51,11 +51,11 @@ const experiences = [
         role: "Junior Web Developer (Intern)",
         company: "Ateneo de Naga University",
         period: "Nov 2018 – Mar 2019",
-        description: "Full-stack web application development using Bootstrap, PHP, MySQL.",
+        description: "Developed full-stack web applications using Bootstrap, PHP, MySQL.",
         details: [
-            "Developed front-end and back-end web application development using Bootstrap, PHP, MySQL.",
-            "Design and implement database systems to support website functionality.",
-            "Collaborate with project management staff to gather requirements and deliver projects."
+            "Developed front-end and back-end web applications using Bootstrap, PHP, MySQL.",
+            "Designed and implemented database systems to support website functionality.",
+            "Collaborated with project management staff to gather requirements and deliver projects."
         ]
     }
 ];

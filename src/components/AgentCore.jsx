@@ -23,11 +23,11 @@ CONTACT:
 
 CURRENT ROLE:
 - AI/ML Computational Science Sr Analyst at Accenture Inc. (Oct 2025 – Present)
-  • Architecting and developing autonomous AI agent systems to optimize complex enterprise workflows
-  • Designing and implementing scalable agents using Google ADK and Python
-  • Integrating LLMs with Function Calling (Tool Use) to automate multi-step business processes
-  • Architecting Retrieval-Augmented Generation (RAG) pipelines for dynamic domain knowledge
-  • Implementing agent memory, reasoning mechanisms, and safety guardrails
+  • Architected and developed autonomous AI agent systems to optimize complex enterprise workflows
+  • Designed and implemented scalable agents using Google ADK and Python
+  • Integrated LLMs with Function Calling (Tool Use) to automate multi-step business processes
+  • Architected Retrieval-Augmented Generation (RAG) pipelines for dynamic domain knowledge
+  • Implemented agent memory, reasoning mechanisms, and safety guardrails
 
 WORK EXPERIENCE:
 1. Junior Reports Developer — Viventis Interim Inc. (Deployed at Schneider Electric) | Jan 2023 – Oct 2025
@@ -43,7 +43,7 @@ WORK EXPERIENCE:
    • Created Google Data Studio reports for TESDA Partnership
 
 3. Junior Web Developer (Intern) — Ateneo de Naga University | Nov 2018 – Mar 2019
-   • Full-stack web development using Bootstrap, PHP, MySQL
+   • Developed full-stack web applications using Bootstrap, PHP, MySQL
    • Designed and implemented database systems
 
 EDUCATION:
