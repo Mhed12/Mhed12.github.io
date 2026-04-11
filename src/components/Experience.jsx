@@ -8,12 +8,14 @@ const experiences = [
         role: "AI/ML Computational Science Sr Analyst",
         company: "Accenture Inc.",
         period: "Oct 2025 - Present",
-        description: "Developing Agentic AI Solutions using Google ADK & Python. Leveraging advanced computational science techniques to drive innovation.",
+        description: "Architecting and developing autonomous AI agent systems to optimize complex enterprise workflows and drive operational efficiency.",
         details: [
-            "Design and implement AI agents using Google Agent Development Kit (ADK).",
-            "Develop robust Python-based solutions for Agentic AI Solutions.",
-            "Collaborate with cross-functional teams to integrate APIs and AI models into business processes.",
-            "Optimize algorithms for performance and scalability."
+            "Design and implement scalable, autonomous AI agents using Google Agent Development Kit (ADK) and Python.",
+            "Integrate Large Language Models (LLMs) utilizing Function Calling (Tool Use) to enable agents to interact with external systems and automate complex business processes.",
+            "Architect and deploy Retrieval-Augmented Generation (RAG) pipelines to empower AI agents with dynamic, domain-specific knowledge.",
+            "Develop robust backend systems, microservices, and orchestration layers for end-to-end Agentic AI Solutions.",
+            "Implement agent memory, reasoning mechanisms, and safety guardrails to ensure reliable automated operations.",
+            "Collaborate with cross-functional teams to identify automation opportunities and deploy AI-driven workflow optimizations."
         ]
     },
     {

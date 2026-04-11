@@ -9,9 +9,9 @@ const skillCategories = [
         skills: ["Data Analysis", "Data Visualization", "ETL Processes", "Reporting", "Business Intelligence"]
     },
     {
-        title: "AI & Engineering",
+        title: "AI & Agent Automation",
         icon: <Cpu size={24} />,
-        skills: ["Python", "Google ADK", "AI Agents", "API Integration"]
+        skills: ["Python", "Google ADK", "Autonomous Agents", "RAG", "Function Calling", "LLM Integration", "Prompt Engineering", "API Integration"]
     },
     {
         title: "Tools & Platforms",

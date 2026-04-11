@@ -19,12 +19,15 @@ CONTACT:
 - Email: mohammeddelacruz712@gmail.com
 - Location: General Trias City, Cavite, Philippines
 - LinkedIn: linkedin.com/in/mohammeddelacruz/
+- GitHub: github.com/Mhed12
 
 CURRENT ROLE:
 - AI/ML Computational Science Sr Analyst at Accenture Inc. (Oct 2025 – Present)
-  • Developing AI Agent applications using Google ADK & Python
-  • Building Agentic AI Solutions and integrating APIs and AI models into business processes
-  • Optimizing algorithms for performance and scalability
+  • Architecting and developing autonomous AI agent systems to optimize complex enterprise workflows
+  • Designing and implementing scalable agents using Google ADK and Python
+  • Integrating LLMs with Function Calling (Tool Use) to automate multi-step business processes
+  • Architecting Retrieval-Augmented Generation (RAG) pipelines for dynamic domain knowledge
+  • Implementing agent memory, reasoning mechanisms, and safety guardrails
 
 WORK EXPERIENCE:
 1. Junior Reports Developer — Viventis Interim Inc. (Deployed at Schneider Electric) | Jan 2023 – Oct 2025
@@ -48,15 +51,15 @@ EDUCATION:
 - Ateneo de Naga University, Naga City, Camarines Sur | Graduated 2019
 
 TECHNICAL SKILLS:
-- AI/ML: Python, Google ADK, AI Agents, API Integration
+- AI & Agent Automation: Python, Google ADK, Autonomous Agents, RAG, Function Calling, LLM Integration, Prompt Engineering, API Integration
 - Data & BI: Tableau, Databricks, SSIS, Google Data Studio, Excel, Tableau Prep
 - Data Analysis: ETL Processes, Reporting, Business Intelligence, Data Visualization
 - Databases: SQL, T-SQL, Microsoft SQL Server, MySQL
 - Web: PHP, HTML/CSS, Bootstrap
-- Currently active in: AI Agent Development
+- Currently active in: AI Agent Automation Development
 
 PROFESSIONAL IDENTITIES (roles he can present):
-1. AI Agent Developer — focused on Google ADK, Python, AI pipelines, API Integration
+1. AI Agent Automation Developer — focused on Google ADK, Python, Autonomous Agents, RAG, Function Calling, LLM Integration
 2. Data Engineer — focused on Databricks, SSIS, SQL, ETL
 3. BI Developer — focused on Tableau, reporting, data visualization
 ===`;
